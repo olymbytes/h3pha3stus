@@ -3,6 +3,8 @@
 namespace Olymbytes\H3pha3stus;
 
 use Illuminate\Support\ServiceProvider;
+use Olymbytes\H3pha3stus\Commands\SortCommand;
+use Olymbytes\H3pha3stus\Commands\FilterCommand;
 
 class H3pha3stusServiceProvider extends ServiceProvider
 {
@@ -27,6 +29,9 @@ class H3pha3stusServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // 
+        $this->commands([
+            FilterCommand::class,
+            SortCommand::class,
+        ]);
     }
 }
