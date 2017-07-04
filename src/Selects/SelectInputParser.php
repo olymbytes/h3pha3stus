@@ -38,18 +38,14 @@ class SelectInputParser implements InputParserContract
 
     public function setSelectableFields(array $selectableFields)
     {
-        if ($selectableFields !== $this->selectableFields) {
-            $this->selectableFields = $selectableFields;
-        }
+        $this->selectableFields = $selectableFields;
 
         return $this;
     }
 
     public function setDefaultSelectedFields(array $defaultSelectedFields)
     {
-        if ($defaultSelectedFields !== $this->defaultSelectedFields) {
-            $this->defaultSelectedFields = $defaultSelectedFields;
-        }
+        $this->defaultSelectedFields = $defaultSelectedFields;
 
         return $this;
     }
