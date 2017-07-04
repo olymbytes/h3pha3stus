@@ -1,0 +1,10 @@
+<?php
+
+namespace {{ namespace }};
+
+use Olymbytes\H3pha3stus\Sorts\AbstractSort;
+
+class {{ name }} extends AbstractSort
+{
+    //
+}
