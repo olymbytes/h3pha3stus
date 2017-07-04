@@ -1,0 +1,29 @@
+{
+    "name": "olymbytes/h3pha3stus",
+    "description": "A Laravel package for filtering, sorting, searching and selecting.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Morten Poul Jensen",
+            "email": "mpj@foreno.dk"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "illuminate/support": "^5.4",
+        "illuminate/database": "^5.4",
+        "illuminate/http": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Olymbytes\\H3pha3stus\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Olymbytes\\H3pha3stus\\H3pha3stusServiceProvider"
+            ]
+        }
+    }
+}
