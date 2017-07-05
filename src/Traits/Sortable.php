@@ -1,6 +1,6 @@
 <?php
 
-namespace Olymbytes\H3pha3sus\Traits;
+namespace Olymbytes\H3pha3stus\Traits;
 
 use Olymbytes\H3pha3stus\Sorts\SortFactory;
 

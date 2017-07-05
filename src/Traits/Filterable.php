@@ -1,6 +1,6 @@
 <?php
 
-namespace Olymbytes\H3pha3stus\Filters;
+namespace Olymbytes\H3pha3stus\Traits;
 
 use Olymbytes\H3pha3stus\Filters\FilterFactory;
 
