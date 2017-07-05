@@ -47,6 +47,6 @@ class FilterCommand extends Command
      */
     protected function getStub()
     {
-        return __DIR__.'/FilterCommand.stub';
+        return __DIR__.'/stubs/filter.stub';
     }
 }

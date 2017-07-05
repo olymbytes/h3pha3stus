@@ -45,6 +45,6 @@ class SortCommand extends GeneratorCommand
      */
     protected function getStub()
     {
-        return __DIR__.'/SortCommand.stub';
+        return __DIR__.'/stubs/sort.stub';
     }
 }
