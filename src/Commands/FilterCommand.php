@@ -2,11 +2,9 @@
 
 namespace Olymbytes\H3pha3stus\Commands;
 
-use Illuminate\Console\Command;
-use Illuminate\Filesystem\Filesystem;
-use Mustache_Engine;
+use Illuminate\Console\GeneratorCommand;
 
-class FilterCommand extends Command
+class FilterCommand extends GeneratorCommand
 {
     /**
      * The name and signature of the console command.
