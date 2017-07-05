@@ -73,13 +73,13 @@ class SortInputParser implements InputParserContract
         foreach ($sortData as $sortDatum) {
             $parts = explode('|', $sortDatum);
 
-            $field = $parts[0];
             $dir = ($parts[1] ?? self::DEFAULT_DIR);
-            if (in_array($field, $this->fields)) {
-                if (!in_array($dir, self::DIR_VALUES)) {
-                    $dir = self::DEFAULT_DIR;
-                }
+            if (!in_array($dir, self::DIR_VALUES)) {
+                $dir = self::DEFAULT_DIR;
+            }
 
+            $field = $parts[0];
+            if (in_array($field, $this->fields)) {
                 $result[$field] = $dir;
             }
         }

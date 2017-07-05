@@ -120,6 +120,7 @@ class FilterInputParser implements InputParserContract
             if (!in_array($operator, self::OPERATOR_VALUES) || is_array($value)) {
                 $operator = self::DEFAULT_OPERATOR;
             }
+            
             $result[] = [
                 'key' => $key,
                 'operator' => $operator,
