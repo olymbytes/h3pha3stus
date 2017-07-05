@@ -13,66 +13,40 @@ class FilterCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'make:filter {name} {--path=app/Filters}';
+    protected $signature = 'make:filter';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create a new filter class.';
+    protected $description = 'Create a new Filter class.';
 
     /**
-     * The filesystem instance.
-     * @var Illuminate\Filesystem\Filesystem
+     * The type of class being generated.
+     * 
+     * @var string
      */
-    protected $file;
+    protected $type = 'Filter';
 
     /**
-     * The mustache engine instance.
-     * @var Mustache_Engine
+     * Get the default namespace for the class.
+     * 
+     * @param  $rootNamespace
+     * @return string
      */
-    protected $mustache;
-
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct(Filesystem $file, Mustache_Engine $mustache)
+    protected function getDefaultNamespace($rootNamespace)
     {
-        parent::__construct();
-        $this->file = $file;
-        $this->mustache = $mustache;
+        return config('h3pha3stus.filters.namespace');
     }
 
     /**
-     * Execute the console command.
+     * Get the stub file for the generator.
      *
-     * @return mixed
+     * @return string
      */
-    public function handle()
+    protected function getStub()
     {
-        $name = $this->argument('name');
-        $path = $this->option('path');
-
-        // Retrieve the template file
-        $template = $this->file->get(__DIR__ . '/FilterCommand.stub');
-
-        // Render the template through mustache engine
-        $template = $this->mustache->render($template, [
-            'name' => $name, 
-            'namespace' => config('h3pha3stus.filters.namespace'),
-        ]);
-
-        // Create directory if it does not exist
-        if (!$this->file->exists(base_path($path))) {
-            $this->file->makeDirectory(base_path($path));
-        }
-
-        // Save the file
-        $this->file->put(base_path($path."/".$name.".php"), $template);
-
-        $this->info('Filter has been generated!');
+        return __DIR__.'/FilterCommand.stub';
     }
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace {{ namespace }};
+namespace DummyNamespace;
 
 use Olymbytes\H3pha3stus\Sorts\AbstractSort;
 
-class {{ name }} extends AbstractSort
+class DummyClass extends AbstractSort
 {
     //
 }

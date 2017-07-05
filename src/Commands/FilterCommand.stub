@@ -1,10 +1,10 @@
 <?php
 
-namespace {{ namespace }};
+namespace DummyNamespace;
 
 use Olymbytes\H3pha3stus\Filters\AbstractFilter;
 
-class {{ name }} extends AbstractFilter
+class DummyClass extends AbstractFilter
 {
     //
 }

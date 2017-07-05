@@ -2,77 +2,49 @@
 
 namespace Olymbytes\H3pha3stus\Commands;
 
-use Illuminate\Console\Command;
-use Illuminate\Filesystem\Filesystem;
-use Mustache_Engine;
+use Illuminate\Console\GeneratorCommand;
 
-class SortCommand extends Command
+class SortCommand extends GeneratorCommand
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'make:sort {name} {--path=app/Sorts}';
+    protected $signature = 'make:sort';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create a new filter class.';
+    protected $description = 'Create a new Sort class.';
 
     /**
-     * The filesystem instance.
-     * @var Illuminate\Filesystem\Filesystem
+     * The type of class being generated.
+     * 
+     * @var string
      */
-    protected $file;
+    protected $type = 'Sort';
 
     /**
-     * The mustache engine instance.
-     * @var Mustache_Engine
+     * Get the default namespace for the class.
+     * 
+     * @param  $rootNamespace
+     * @return string
      */
-    protected $mustache;
-
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct(Filesystem $file, Mustache_Engine $mustache)
+    protected function getDefaultNamespace($rootNamespace)
     {
-        parent::__construct();
-        $this->file = $file;
-        $this->mustache = $mustache;
+        return config('h3pha3stus.sorts.namespace');
     }
 
     /**
-     * Execute the console command.
+     * Get the stub file for the generator.
      *
-     * @return mixed
+     * @return string
      */
-    public function handle()
+    protected function getStub()
     {
-        $name = $this->argument('name');
-        $path = $this->option('path');
-
-        // Retrieve the template file
-        $template = $this->file->get(__DIR__ . '/SortCommand.stub');
-
-        // Render the template through mustache engine
-        $template = $this->mustache->render($template, [
-            'name' => $name, 
-            'namespace' => config('h3pha3stus.sorts.namespace'),
-        ]);
-
-        // Create directory if it does not exist
-        if (!$this->file->exists(base_path($path))) {
-            $this->file->makeDirectory(base_path($path));
-        }
-
-        // Save the file
-        $this->file->put(base_path($path."/".$name.".php"), $template);
-
-        $this->info('Sort has been generated!');
+        return __DIR__.'/SortCommand.stub';
     }
 }
