@@ -1,11 +1,13 @@
 {
     "name": "olymbytes/h3pha3stus",
     "description": "A Laravel package for filtering, sorting, searching and selecting.",
+    "homepage": "https://github.com/olymbytes/h3pha3stus",
     "license": "MIT",
     "authors": [
         {
             "name": "Morten Poul Jensen",
-            "email": "mpj@foreno.dk"
+            "email": "mpj@foreno.dk",
+            "role": "Developer"
         }
     ],
     "require": {
@@ -16,10 +18,25 @@
         "illuminate/filesystem": "^5.4",
         "illuminate/console": "^5.4"
     },
+    "require-dev": {
+        "orchestra/testbench": "^3.4",
+        "phpunit/phpunit": "^6.2"
+    },
     "autoload": {
         "psr-4": {
             "Olymbytes\\H3pha3stus\\": "src"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Olymbytes\\H3pha3stus\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
     },
     "extra": {
         "laravel": {
