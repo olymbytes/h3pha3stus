@@ -19,6 +19,7 @@
         "illuminate/console": "^5.4"
     },
     "require-dev": {
+        "orchestra/database": "^3.4",
         "orchestra/testbench": "^3.4",
         "phpunit/phpunit": "^6.2"
     },
