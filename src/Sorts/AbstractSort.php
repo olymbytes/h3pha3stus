@@ -44,7 +44,7 @@ abstract class AbstractSort
     {
         $this->query = $query;
         
-        $fieldsToSort = new SortInputParser($this->model->getSortableFields())->parse($input);
+        $fieldsToSort = (new SortInputParser($this->model->getSortableFields()))->parse($input);
 
         foreach ($fieldsToSort as $column => $direction) {
             $tableAndColumn = $this->getQualifiedColumnName($column);

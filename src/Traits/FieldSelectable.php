@@ -2,6 +2,8 @@
 
 namespace Olymbytes\H3pha3stus\Traits;
 
+use Olymbytes\H3pha3stus\Selects\SelectInputParser;
+
 trait FieldSelectable
 {
     /**
@@ -25,10 +27,10 @@ trait FieldSelectable
      */
     public function scopeSelectable($query, array $input)
     {
-        $fieldsToSelect = new SelectInputParser(
+        $fieldsToSelect = (new SelectInputParser(
             $this->getSelectableFields(),
             $this->getDefaultSelectedFields()
-        )->parse($input);
+        ))->parse($input);
 
         /**
          * Break out the fields by "direct" fields and "relationship" fields.
