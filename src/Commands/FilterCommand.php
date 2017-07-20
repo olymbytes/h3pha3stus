@@ -7,11 +7,11 @@ use Illuminate\Console\GeneratorCommand;
 class FilterCommand extends GeneratorCommand
 {
     /**
-     * The name and signature of the console command.
+     * The console command name.
      *
      * @var string
      */
-    protected $signature = 'make:filter';
+    protected $name = 'make:filter';
 
     /**
      * The console command description.
