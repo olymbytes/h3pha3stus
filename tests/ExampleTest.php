@@ -15,7 +15,7 @@ class ExampleTest extends TestCase
     }
 
     /** @test */
-    function it_can_access_cities_endpoint()
+    function it_can_filter_cities()
     {
         $this->disableExceptionHandling();
 
@@ -28,5 +28,41 @@ class ExampleTest extends TestCase
         $response->assertStatus(200);
 
         $this->assertCount(1, $response->decodeResponseJson());
+    }
+
+    /** @test */
+    function it_can_sort_cities_in_descending_order()
+    {
+        $this->disableExceptionHandling();
+
+        $response = $this->json('GET', '/cities', [
+            'sort' => 'code|desc',
+        ]);
+
+        $response->assertStatus(200);
+
+        $cities = $response->decodeResponseJson();
+        $highestValue = $cities[0]['code'];
+        foreach ($cities as $city) {
+            $this->assertTrue($city['code'] <= $highestValue);
+        }
+    }
+
+    /** @test */
+    function it_can_sort_cities_in_ascending_order()
+    {
+        $this->disableExceptionHandling();
+
+        $response = $this->json('GET', '/cities', [
+            'sort' => 'code|asc',
+        ]);
+
+        $response->assertStatus(200);
+
+        $cities = $response->decodeResponseJson();
+        $lowestValue = $cities[0]['code'];
+        foreach ($cities as $city) {
+            $this->assertTrue($city['code'] >= $lowestValue);
+        }
     }
 }
