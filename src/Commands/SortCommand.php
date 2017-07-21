@@ -7,11 +7,11 @@ use Illuminate\Console\GeneratorCommand;
 class SortCommand extends GeneratorCommand
 {
     /**
-     * The name and signature of the console command.
+     * The console command name.
      *
      * @var string
      */
-    protected $signature = 'make:sort';
+    protected $name = 'make:sort';
 
     /**
      * The console command description.
