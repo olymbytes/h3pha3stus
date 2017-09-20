@@ -40,7 +40,7 @@ abstract class TestCase extends Orchestra
     /**
      * Get the environment set up.
      * @param  $app
-     * @return void     
+     * @return void
      */
     public function getEnvironmentSetUp($app)
     {
@@ -51,7 +51,7 @@ abstract class TestCase extends Orchestra
             'prefix' => '',
         ]);
         $app['config']->set('app.key', '6rE9Nz59bGRbeMATftriyQjrpF7DcOQm');
-        $app['router']->get('/cities', function(Request $request) {
+        $app['router']->get('/cities', function (Request $request) {
             return City::query()
                 ->fieldSearchable($request->all())
                 ->selectable($request->all())
@@ -66,7 +66,6 @@ abstract class TestCase extends Orchestra
      */
     protected function setUpDatabase()
     {
-
         $this->createTables('cities', 'countries');
 
         $this->seedTables();
@@ -83,7 +82,7 @@ abstract class TestCase extends Orchestra
 
     /**
      * Create the provided tables.
-     * @param   $tables 
+     * @param   $tables
      */
     protected function createTables(...$tables)
     {
@@ -193,9 +192,14 @@ abstract class TestCase extends Orchestra
     {
         $this->oldExceptionHandler = $this->app->make(ExceptionHandler::class);
         $this->app->instance(ExceptionHandler::class, new class extends Handler {
-            public function __construct() {}
-            public function report(\Exception $e) {}
-            public function render($request, \Exception $e) {
+            public function __construct()
+            {
+            }
+            public function report(\Exception $e)
+            {
+            }
+            public function render($request, \Exception $e)
+            {
                 throw $e;
             }
         });

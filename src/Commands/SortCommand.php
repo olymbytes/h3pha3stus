@@ -22,14 +22,14 @@ class SortCommand extends GeneratorCommand
 
     /**
      * The type of class being generated.
-     * 
+     *
      * @var string
      */
     protected $type = 'Sort';
 
     /**
      * Get the default namespace for the class.
-     * 
+     *
      * @param  $rootNamespace
      * @return string
      */

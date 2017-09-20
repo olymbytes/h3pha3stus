@@ -22,14 +22,14 @@ class FilterCommand extends GeneratorCommand
 
     /**
      * The type of class being generated.
-     * 
+     *
      * @var string
      */
     protected $type = 'Filter';
 
     /**
      * Get the default namespace for the class.
-     * 
+     *
      * @param  $rootNamespace
      * @return string
      */

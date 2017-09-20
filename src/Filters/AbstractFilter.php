@@ -53,7 +53,7 @@ abstract class AbstractFilter
             $filterOnMethod = camel_case($column);
             if (method_exists($this, $filterOnMethod)) {
                 $this->$filterOnMethod($column, $operator, $value);
-            } else if (is_array($value)) {
+            } elseif (is_array($value)) {
                 $this->query->whereIn($tableAndColumn, $value);
             } else {
                 $this->query->where($tableAndColumn, $operator, $value);

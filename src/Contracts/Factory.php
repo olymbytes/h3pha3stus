@@ -2,7 +2,7 @@
 
 namespace Olymbytes\H3pha3stus\Contracts;
 
-interface Factory 
+interface Factory
 {
     /**
      * Instantiate the class.

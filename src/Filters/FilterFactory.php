@@ -9,14 +9,14 @@ class FilterFactory extends AbstractFactory
 {
     /**
      * Default class to instantiate.
-     * 
+     *
      * @var string
      */
     protected $defaultClass = DefaultFilter::class;
 
     /**
      * String to append to the QualifiedModelName.
-     * 
+     *
      * @var string
      */
     protected $suffix = 'Filter';

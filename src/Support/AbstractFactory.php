@@ -9,28 +9,28 @@ abstract class AbstractFactory implements FactoryContract
 {
     /**
      * Default class to instantiate if nothing is found.
-     * 
+     *
      * @var string|boolean
      */
     protected $defaultClass = false;
 
     /**
      * The model instance.
-     * 
+     *
      * @var Illuminate\Database\Eloquent\Model
      */
     protected $model;
 
     /**
      * String to append to the QualifiedModelName.
-     * 
+     *
      * @var string
      */
     protected $suffix;
 
     /**
      * Sets the model instance on the factory.
-     * 
+     *
      * @param Illuminate\Database\Eloquent\Model $model
      */
     public function __construct($model)
@@ -40,7 +40,7 @@ abstract class AbstractFactory implements FactoryContract
 
     /**
      * Get the model name.
-     * 
+     *
      * @return string
      */
     protected function getModelName()
@@ -57,7 +57,7 @@ abstract class AbstractFactory implements FactoryContract
 
     /**
      * Get the full path of the model.
-     * 
+     *
      * @return string
      */
     protected function getQualifiedModelName()
@@ -67,7 +67,7 @@ abstract class AbstractFactory implements FactoryContract
 
     /**
      * Instantiate the sort.
-     * 
+     *
      * @return Olymbytes\H3pha3stus\Sorts\AbstractSort
      */
     public function make()

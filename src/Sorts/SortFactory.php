@@ -9,14 +9,14 @@ class SortFactory extends AbstractFactory
 {
     /**
      * Default class to instantiate.
-     * 
+     *
      * @var string
      */
     protected $defaultClass = DefaultSort::class;
 
     /**
      * String to append to the QualifiedModelName.
-     * 
+     *
      * @var string
      */
     protected $suffix = 'Sort';

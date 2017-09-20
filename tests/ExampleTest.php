@@ -8,14 +8,14 @@ use Olymbytes\H3pha3stus\Test\Models\Country;
 class ExampleTest extends TestCase
 {
     /** @test */
-    function it_has_seeded_database()
+    public function it_has_seeded_database()
     {
         $this->assertCount(1, Country::all());
         $this->assertCount(5, City::all());
     }
 
     /** @test */
-    function it_can_filter_cities()
+    public function it_can_filter_cities()
     {
         $this->disableExceptionHandling();
 
@@ -31,7 +31,7 @@ class ExampleTest extends TestCase
     }
 
     /** @test */
-    function it_can_sort_cities_in_descending_order()
+    public function it_can_sort_cities_in_descending_order()
     {
         $this->disableExceptionHandling();
 
@@ -49,7 +49,7 @@ class ExampleTest extends TestCase
     }
 
     /** @test */
-    function it_can_sort_cities_in_ascending_order()
+    public function it_can_sort_cities_in_ascending_order()
     {
         $this->disableExceptionHandling();
 
